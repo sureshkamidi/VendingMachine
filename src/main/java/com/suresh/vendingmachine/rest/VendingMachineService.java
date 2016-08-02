@@ -7,6 +7,7 @@ import javax.ws.rs.Path;
 public class VendingMachineService {
 	
 	@GET
+	@Path("getName")
 	public String getName() {
 		return "My vending machine!!";
 	}

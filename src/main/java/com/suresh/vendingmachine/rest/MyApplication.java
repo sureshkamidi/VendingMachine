@@ -1,18 +1,15 @@
 package com.suresh.vendingmachine.rest;
 
-import java.util.HashSet;
-import java.util.Set;
+import javax.ws.rs.ApplicationPath;
 
-import javax.ws.rs.core.Application;
+import org.glassfish.jersey.server.ResourceConfig;
 
-public class MyApplication extends Application {
+@ApplicationPath("rest")
+public class MyApplication extends ResourceConfig {
 
-	@Override
-	public Set<Class<?>> getClasses() {
-		Set<Class<?>> s = new HashSet<Class<?>>();
-        s.add(VendingMachineService.class);
-        return s;
-	}
-	
-
+	 public MyApplication() {
+	        packages("com.suresh.vendingmachine.rest");
+	    }
+	 
+	 
 }
