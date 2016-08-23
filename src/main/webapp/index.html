@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Vending Machine</title>
+    <meta charset="ISO-8859-1">
+    <title>Vending Machine</title>
+    <script type="text/javascript" src="js/lib/jquery.js"></script>
+    
+    
 </head>
-<body>
-	Hi these  are  my services...
+<body id="mybody">
+     
+    <p>Hi these are my web services...</p>
+    <button id="myAjaxCall">ajax call</button>
+    <script type="text/javascript">
+        $("#myAjaxCall").click(function(){ 
+            alert("calling getName");
+                $.ajax({
+                   type: "GET",
+                   dataType: "json",
+                   url: "rest/myservices/getName",
+                   success: function(data){        
+                        alert(data);
+                    }
+                });
+            
+            });
+        $( "p" ).click(function() {
+                $( this ).slideUp();
+            });
+    </script>
+
 </body>
 </html>
