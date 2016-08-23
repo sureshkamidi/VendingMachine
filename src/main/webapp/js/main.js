@@ -1,19 +1,33 @@
-requirejs.config({
+require.config({
     //By default load any module IDs from js/lib
-    baseUrl: 'js/lib',
+   // baseUrl: 'js/lib',
     //except, if the module ID starts with "app",
     //load it from the js/app directory. paths
     //config is relative to the baseUrl, and
     //never includes a ".js" extension since
     //the paths config could be for a directory.
+	 shim : {
+		 "bootstrap" : { "deps" :['jQuery'] }
+	    },
     paths: {
-        app: '../app'
+    	jQuery: 'lib/jquery',
+    	bootstrap:'lib/bootstrap',
+        restClient: 'app/rest-client'
     }
 });
 
 // Start the main app logic.
-requirejs(['jquery'],
-function   ($) {
-    //jQuery, canvas and the app/sub module are all
-    //loaded and can be used here now.
+require([
+         'restClient'
+        ],
+function   (restClient) {
+	
+	$("#jQueryId").click(function(){
+		var name = restClient.getName();
+		$("#nameResult").text(name);
+		
+	});
+	
+
+	
 });

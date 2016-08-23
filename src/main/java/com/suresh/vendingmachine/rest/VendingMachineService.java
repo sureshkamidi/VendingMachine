@@ -18,7 +18,7 @@ public class VendingMachineService {
 	public Map  getName() {
 		Map<String, String> result = new HashMap<String, String>();
 		
-		result.put("Name" , "My vending machine!!");
+		result.put("Name" , "Suresh Kumar");
 		return result;
 	}
 
