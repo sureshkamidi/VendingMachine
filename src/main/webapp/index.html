@@ -10,16 +10,20 @@
 <body id="mybody">
      
     <p>Hi these are my web services...</p>
+
+    <div id="myfirstDiv">
+        <p>The Get Rest Response</p> <textarea rows="1" cols="1" id="mytext"></textarea>
+    
+    </div>    
     <button id="myAjaxCall">ajax call</button>
     <script type="text/javascript">
         $("#myAjaxCall").click(function(){ 
-            alert("calling getName");
                 $.ajax({
                    type: "GET",
                    dataType: "json",
                    url: "rest/myservices/getName",
                    success: function(data){        
-                        alert(data);
+                        $("#mytext").setText(data.Name);
                     }
                 });
             
